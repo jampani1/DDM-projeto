@@ -17,6 +17,7 @@
 .login button{
     background-color: #592050;
     color: #B8A9D9;
+    border: none;
     font-size: 20px;
     cursor: pointer;
     border-radius: 100px;
@@ -31,14 +32,12 @@
 img#mulher_icon {
     width: 400px;
     height: auto;
-    margin-left: 20%;
-    margin-top: 70px;
 }
 
 /*Estilo Formulário/login*/
 .form-group {
     width: 60%;
-    margin: 0 auto;
+    margin: auto 100px auto 110px;
     text-align: left;
 }
 
@@ -55,33 +54,30 @@ img#mulher_icon {
 
 /*Estilo Header */
 
-.header h1{
+.header h3{
     color: #592050;
     margin-bottom: 5px;
 }
 
-.header h3{
-    color: #592050;
+.header h4{
+    color: #B8A9D9;
 }
 
 .img-logo {
     width: 80px;
     height: auto;
     display: block;
-    margin-right: 100%;
-    margin-bottom: 10px;
 }
 
 /*Estilo Footer */
 .img-logo-footer {
-    width: 300px;
+    width: 250px;
     height: auto;
-    margin-top: 200px;
-    margin-bottom: -300px;
 }
 
 /*Estilo Geral da Página*/
 body {
+    overflow: hidden; /* Bloqueia tanto scroll vertical quanto horizontal */
     display: flex;
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Centraliza o conteúdo verticalmente */
@@ -90,11 +86,14 @@ body {
 
 .caixa {
     padding: 80px;
+    border: 0.2px groove;
+    border-color: #592050;
     border-radius: 20px;
     box-shadow: 0 18px 20px rgba(0, 0, 0, 0.3);
     min-width: 150vh;
     min-height: 90vh;
-    max-width: 200vh;
+    max-width: 150vh;
+    max-height: 150vh;
 
     background-image: url('imgs/background.png');
     background-size: cover;
@@ -102,12 +101,25 @@ body {
     background-repeat: no-repeat;
 }
 
-.caixa-main{
-    padding: 80px;
-    background-color: #fff;
+.overlay {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor branca com opacidade de 80% */
     border-radius: 20px;
-    box-shadow: 0 18px 20px rgba(0, 0, 0, 0.3);
-    min-width: 180vh;
-    min-height: 75vh;
-    max-width: 200vh;
+    z-index: -1; /* Coloca o overlay atrás do conteúdo */
+}
+
+.caixa-content {
+    position: absolute;
+    top: 250px;
+    z-index: 1; /* Garante que o conteúdo fique acima do overlay */
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
 }
